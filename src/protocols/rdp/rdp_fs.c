@@ -173,7 +173,7 @@ int guac_rdp_fs_open(guac_rdp_fs* fs, const char* path,
         path = "\\";
 
     /* If path is relative, the file does not exist */
-    else if (path[0] != '\\') {
+    else if (path[0] != '\\' && path[0] != '/') {
         GUAC_RDP_DEBUG(1, "Failure - path \"%s\" is relative.", path);
         return GUAC_RDP_FS_ENOENT;
     }
